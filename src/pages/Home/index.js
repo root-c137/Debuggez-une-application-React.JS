@@ -1,3 +1,4 @@
+
 import Menu from "../../containers/Menu";
 import ServiceCard from "../../components/ServiceCard";
 import EventCard from "../../components/EventCard";
@@ -13,7 +14,9 @@ import Modal from "../../containers/Modal";
 import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
-  const {last} = useData()
+  const {data} = useData();
+  const LastData = data?.events[data.events.length - 1];
+
 
 
   return <>
@@ -119,9 +122,9 @@ const Page = () => {
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
         <EventCard
-            imageSrc={last?.cover}
-            title={last?.title}
-            date={new Date(last?.date)}
+            imageSrc={LastData?.cover}
+            title={LastData?.title}
+            date={new Date(LastData?.date)}
             small
             label="boom"
         />
