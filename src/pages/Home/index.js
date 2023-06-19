@@ -14,6 +14,8 @@ import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
   const {last} = useData()
+
+
   return <>
     <header>
       <Menu />
@@ -60,55 +62,55 @@ const Page = () => {
         <p>Une équipe d’experts dédiés à l’ogranisation de vos événements</p>
         <div className="ListContainer">
           <PeopleCard
-            imageSrc="/images/stephanie-liverani-Zz5LQe-VSMY-unsplash.png"
-            name="Samira"
-            position="CEO"
+              imageSrc="/images/stephanie-liverani-Zz5LQe-VSMY-unsplash.png"
+              name="Samira"
+              position="CEO"
           />
           <PeopleCard
-            imageSrc="/images/linkedin-sales-solutions-pAtA8xe_iVM-unsplash.png"
-            name="Jean-baptiste"
-            position="Directeur marketing"
+              imageSrc="/images/linkedin-sales-solutions-pAtA8xe_iVM-unsplash.png"
+              name="Jean-baptiste"
+              position="Directeur marketing"
           />
           <PeopleCard
-            imageSrc="/images/christina-wocintechchat-com-SJvDxw0azqw-unsplash.png"
-            name="Alice"
-            position="CXO"
+              imageSrc="/images/christina-wocintechchat-com-SJvDxw0azqw-unsplash.png"
+              name="Alice"
+              position="CXO"
           />
           <PeopleCard
-            imageSrc="/images/jonas-kakaroto-KIPqvvTOC1s-unsplash.png"
-            name="Luís"
-            position="Animateur"
+              imageSrc="/images/jonas-kakaroto-KIPqvvTOC1s-unsplash.png"
+              name="Luís"
+              position="Animateur"
           />
           <PeopleCard
-            imageSrc="/images/amy-hirschi-b3AYk8HKCl0-unsplash1.png"
-            name="Christine"
-            position="VP animation"
+              imageSrc="/images/amy-hirschi-b3AYk8HKCl0-unsplash1.png"
+              name="Christine"
+              position="VP animation"
           />
           <PeopleCard
-            imageSrc="/images/christina-wocintechchat-com-0Zx1bDv5BNY-unsplash.png"
-            name="Isabelle"
-            position="VP communication"
+              imageSrc="/images/christina-wocintechchat-com-0Zx1bDv5BNY-unsplash.png"
+              name="Isabelle"
+              position="VP communication"
           />
         </div>
       </section>
       <div className="FormContainer" id="contact">
         <h2 className="Title">Contact</h2>
         <Modal
-          Content={
-            <div className="ModalMessage--success">
-              <div>Message envoyé !</div>
-              <p>
-                Merci pour votre message nous tâcherons de vous répondre dans
-                les plus brefs délais
-              </p>
-            </div>
-          }
+            Content={
+              <div className="ModalMessage--success">
+                <div>Message envoyé !</div>
+                <p>
+                  Merci pour votre message nous tâcherons de vous répondre dans
+                  les plus brefs délais
+                </p>
+              </div>
+            }
         >
           {({ setIsOpened }) => (
-            <Form
-              onSuccess={() => setIsOpened(true)}
-              onError={() => null}
-            />
+              <Form
+                  onSuccess={() => setIsOpened(true)}
+                  onError={() => null}
+              />
           )}
         </Modal>
       </div>
@@ -117,11 +119,11 @@ const Page = () => {
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
         <EventCard
-          imageSrc={last?.cover}
-          title={last?.title}
-          date={new Date(last?.date)}
-          small
-          label="boom"
+            imageSrc={last?.cover}
+            title={last?.title}
+            date={new Date(last?.date)}
+            small
+            label="boom"
         />
       </div>
       <div className="col contact">
@@ -155,6 +157,7 @@ const Page = () => {
       </div>
     </footer>
   </>
+
 }
 
 export default Page;

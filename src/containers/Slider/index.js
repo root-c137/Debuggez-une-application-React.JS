@@ -8,23 +8,25 @@ const Slider = () => {
   const { data } = useData();
   const [index, setIndex] = useState(0);
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
-    new Date(evtA.date) < new Date(evtB.date) ? -1 : 1
+    (new Date(evtB.date) - new Date(evtA.date) )
   );
   const nextCard = () => {
     setTimeout(
-      () => setIndex(index < byDateDesc.length ? index + 1 : 0),
-      5000
+      () => setIndex(index + 1 < byDateDesc?.length  ? index + 1 : 0),
+      2000
     );
   };
+
   useEffect(() => {
     nextCard();
   });
+
+
   return (
     <div className="SlideCardList">
       {byDateDesc?.map((event, idx) => (
-        <>
+        <div  key={event.title} >
           <div
-            key={event.title}
             className={`SlideCard SlideCard--${
               index === idx ? "display" : "hide"
             }`}
@@ -40,18 +42,23 @@ const Slider = () => {
           </div>
           <div className="SlideCard__paginationContainer">
             <div className="SlideCard__pagination">
-              {byDateDesc.map((_, radioIdx) => (
-                <input
-                  key={`${event.id}`}
-                  type="radio"
-                  name="radio-button"
-                  checked={idx === radioIdx}
-                />
+              {byDateDesc?.map((e, radioIdx) => (
+
+                  <input
+                      key={e.title}
+                      type="radio"
+                      name="radio-button"
+                      checked={index === radioIdx }
+                      onChange={() => this}
+                  />
               ))}
             </div>
           </div>
-        </>
+
+        </div>
       ))}
+
+
     </div>
   );
 };
