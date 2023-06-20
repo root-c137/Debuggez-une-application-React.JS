@@ -111,7 +111,7 @@ const Page = () => {
         >
           {({ setIsOpened }) => (
               <Form
-                  onSuccess={() => setIsOpened(true)}
+                  onSuccess={() => setIsOpened(true) }
                   onError={() => null}
               />
           )}
