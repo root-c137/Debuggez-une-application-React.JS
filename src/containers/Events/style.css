@@ -1,3 +1,9 @@
 .SelectTitle {
   color: white;
 }
+
+.CurrentPage
+{
+  font-weight: bold;
+  font-size: 1.1rem;
+}
