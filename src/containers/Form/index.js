@@ -28,6 +28,7 @@ const Form = ({ onSuccess, onError }) => {
   );
 
 
+
   return (
     <form onSubmit={sendContact}>
       <div className="row">

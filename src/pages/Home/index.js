@@ -63,7 +63,7 @@ const Page = () => {
       <section className="PeoplesContainer" id="notre-equipe">
         <h2 className="Title">Notre équipe</h2>
         <p>Une équipe d’experts dédiés à l’ogranisation de vos événements</p>
-        <div className="ListContainer">
+        <div data-testid="ListPeople" className="ListContainer">
           <PeopleCard
               imageSrc="/images/stephanie-liverani-Zz5LQe-VSMY-unsplash.png"
               name="Samira"
@@ -118,7 +118,7 @@ const Page = () => {
         </Modal>
       </div>
     </main>
-    <footer className="row">
+    <footer data-testid="Footer" className="row">
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
         <EventCard

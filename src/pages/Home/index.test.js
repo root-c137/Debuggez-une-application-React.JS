@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import Home from "./index";
+import EventList from "../../containers/Events";
 
 describe("When Form is created", () => {
   it("a list of fields card is displayed", async () => {
@@ -29,16 +30,27 @@ describe("When Form is created", () => {
 
 
 describe("When a page is created", () => {
-  it("a list of events is displayed", () => {
-    // to implement
+  it("a list of events is displayed",  async () => {
+
+    render(<Home />);
+    const Container = screen.getByTestId("events");
+    expect(Container).toBeInTheDocument();
   })
-  it("a list a people is displayed", () => {
-    // to implement
+  it("a list a people is displayed", async () => {
+    render(<Home />);
+    const Container = screen.getByTestId("ListPeople");
+    expect(Container.childElementCount).toEqual(6);
   })
-  it("a footer is displayed", () => {
-    // to implement
+  it("a footer is displayed", async () => {
+    render(<Home />);
+    const Footer = screen.getByTestId("Footer");
+    expect(Footer).toBeInTheDocument();
   })
-  it("an event card, with the last event, is displayed", () => {
-    // to implement
+  it("an event card, with the last event, is displayed", async () => {
+    render(<Home/>);
+    const Footer = screen.getByTestId("Footer");
+    const LastCard = Footer.firstChild.getElementsByTagName('div')[0];
+    expect(LastCard).toBeInTheDocument();
+
   })
 });
