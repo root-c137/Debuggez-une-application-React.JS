@@ -15,9 +15,7 @@ import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
   const {data} = useData();
-  const LastData = data?.events[data.events.length - 1];
-
-
+  const LastData = data?.events[data.events.length - 1]; // Pour récuperer la dernière réalisation...
 
   return <>
     <header>
@@ -122,6 +120,7 @@ const Page = () => {
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
         <EventCard
+            // si pas de test déclenche un warning dans la console..
             imageSrc={LastData?.cover !== undefined ? LastData.cover : ""}
             title={LastData?.title !== undefined ? LastData.title : ""}
             date={new Date(LastData?.date)}
