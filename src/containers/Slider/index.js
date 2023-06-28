@@ -9,20 +9,17 @@ const Slider = () => {
   const [index, setIndex] = useState(0);
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
 
-    (new Date(evtA.date) - new Date(evtB.date) )
+    (new Date(evtA.date) - new Date(evtB.date)  ) // j'ai supprimé "new Date(evtA.date) < new Date(evtB.date) ? -1 : 1"
   );
   const nextCard = () => {
     setTimeout(
       () => setIndex(index + 1 < byDateDesc?.length  ? index + 1 : 0),
-      2000
-    );
+      5000
+    ); // avant -> setIndex(index < byDateDesc.length ? index + 1 : 0), 5000,
+    // pour enlever le blanc à la fin du slider..
   };
 
   useEffect(() => {
-
-    if(byDateDesc !== undefined)
-    console.log(byDateDesc);
-
     nextCard();
   });
 
