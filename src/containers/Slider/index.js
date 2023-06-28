@@ -8,7 +8,8 @@ const Slider = () => {
   const { data } = useData();
   const [index, setIndex] = useState(0);
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
-    (new Date(evtB.date) - new Date(evtA.date) )
+
+    (new Date(evtA.date) - new Date(evtB.date) )
   );
   const nextCard = () => {
     setTimeout(
@@ -18,6 +19,10 @@ const Slider = () => {
   };
 
   useEffect(() => {
+
+    if(byDateDesc !== undefined)
+    console.log(byDateDesc);
+
     nextCard();
   });
 
