@@ -12,13 +12,14 @@ const Form = ({ onSuccess, onError }) => {
   const sendContact = useCallback(
     async (evt) => {
       evt.preventDefault();
-      setSending(true);
+      setSending(true); // Pour que le texte du bouton change..
+      onSuccess(true); // Pour afficher la modale
+
 
       // We try to call mockContactApi
       try {
         await mockContactApi();
         setSending(false);
-        onSuccess(true);
       } catch (err) {
         setSending(false);
         onError(err);
