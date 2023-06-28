@@ -11,7 +11,7 @@ export const MONTHS = {
   9: "octobre",
   10: "novembre",
   11: "décembre",
-};
+}; // J'ai changé les index du tableau..
 
 export const getMonth = (date) => MONTHS[date.getMonth()];
 
